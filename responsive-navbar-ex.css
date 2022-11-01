@@ -1,0 +1,89 @@
+.header {
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.header .right-bar ul {
+    display: flex;
+}
+.header .right-bar ul li {
+    padding: 1rem;
+    margin: 0.7rem;
+    list-style-type: none;
+}
+
+.header .nav_bar {
+    display: none;
+}
+
+.header .nav_overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right:0;
+    background-color: rgba(0,0,0,0.3);
+    display: none;
+    animation: fadeIn linear 0.2s;
+}
+
+.header .nav_mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 100%;
+    background-color: #fff;
+    color: black;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform liner 0.2s, opacity liner 2s;
+}
+
+.header .nav_mobile ul li{
+    list-style-type: none;
+    padding: 1rem;
+    font-weight: bold;
+    color: black;
+}
+
+.header .nav_mobile .close {
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.header .nav_input:checked ~ .nav_overlay{
+    display: block;
+}
+
+.header .nav_input:checked ~ .nav_mobile{
+    opacity: 1;
+    transform: translateX(0%);
+}
+@media (max-width: 1023px) {
+    .header .nav_bar {
+        display: block;
+        margin-left: 1rem;
+        margin-top: 0.2rem;
+    }
+
+    .header .right-bar .ul {
+        display: none;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
