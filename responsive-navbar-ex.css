@@ -67,8 +67,12 @@
     opacity: 1;
     transform: translateX(0%);
 }
+
+.header .nav-bar-icon {
+    display: none;
+}
 @media (max-width: 1023px) {
-    .header .nav_bar {
+    .header .nav-bar-icon {
         display: block;
         margin-left: 1rem;
         margin-top: 0.2rem;
